@@ -8,11 +8,12 @@ const jsLoaders = [
 		options: {
 			cacheDirectory: true,
 			babelrc: false,
+			sourceType: 'unambiguous',
 			presets: [
 				[
-					"@babel/preset-env",
-					{
+					"@babel/preset-env", {
 						"targets": {
+							"node": "current",
 							"browsers": [
 								">0.25%",
 								"not ie 10",
@@ -30,7 +31,8 @@ const jsLoaders = [
 			"plugins": [
 				"@babel/plugin-proposal-class-properties",
 				"@babel/plugin-transform-async-to-generator",
-				"@babel/plugin-transform-object-assign"
+				"@babel/plugin-transform-object-assign",
+				"@babel/plugin-transform-runtime"
 			]
 		},
 	},
